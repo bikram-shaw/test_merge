@@ -1,0 +1,113 @@
+http://103.205.67.69/szbarcode/rpopending.php?action=userdetails
+
+body
+
+{"userName": "a","userPassword": "a","deviceId": "","ipAddress": "",
+	"appVer": ""
+}
+
+
+
+response
+ {
+        "errors": {
+            "status_code": "1",
+            "status_message": "Login sucessfully.",
+            "msgstr": "1"
+        }
+    }
+
+
+
+--getitemdetails
+
+http://103.205.67.69/saleszingapi/szapi.php?action=getitemdetails
+
+
+{"dbname":"cw_saleszing","tocken":"1"}
+
+
+-- getbatchdetails
+
+http://103.205.67.69/saleszingapi/szapi.php?action=getbatchdetails
+
+{"dbname":"cw_ajanta","tocken":"1","batchname":"10008050204GB"}
+
+
+
+
+
+-----------------------
+
+
+--postposdetails
+http://103.205.67.69/saleszingapi/szapi.php?action=postposdetails
+
+{
+	
+	"emailid": "cw_ajanta", 	
+	"authtoken":"123456",
+	"dbname": "cw_ajanta", 	
+		"data": [{
+			"branchid":"1",
+			"salespersonid": "1",
+			"voucherno": "<New Number>",
+			"voucherdate": "",
+			"mobileno":"9732062772",
+			"items": [{
+				"itemid": "1",
+				"batchname": "10008050204GB",
+				"qty": "1.00",
+				"mrp": "100.00",
+				"color":"black",
+				"fsize":"5",
+				"uom":"pair",
+				"amount": "100.00",
+				"gstrate": "18.00"			
+			}, {
+				"itemid": "1",
+				"batchname": "10008060204GB",
+				"qty": "1.00",
+				"mrp": "100.00",
+				"color":"black",
+				"fsize":"6",
+				"uom":"pair",
+				"amount": "100.00",
+				"gstrate": "18.00"
+			}, {
+				"itemid": "1",
+				"batchname": "10008070204GB",
+				"qty": "1.00",
+				"mrp": "100.00",
+				"color":"black",
+				"fsize":"7",
+				"uom":"pair",
+				"amount": "100.00",
+				"gstrate": "18.00"
+			}]
+
+		}]
+
+	
+}
+
+
+-- getdashboarddetails
+
+http://103.205.67.69/saleszingapi/szapi.php?action=getdashboarddetails
+{"dbname":"cw_ajanta","authtoken":"1","fromdate":"20200301","todate":"20200330"}
+
+
+
+-- getsalesregister
+http://103.205.67.69/saleszingapi/szapi.php?action=getsalesregister
+{"dbname":"cw_ajanta","tocken":"1","fromdate":"20200301","todate":"20200330"}
+
+
+
+
+-- getsalesperson
+
+http://103.205.67.69/saleszingapi/szapi.php?action=getsalesperson
+
+{"authtoken":"123456","userid":"300"}
